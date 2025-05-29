@@ -1,0 +1,29 @@
+name: CI - Planned Outages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🔄 Checkout repo
+      uses: actions/checkout@v3
+
+    - name: 🟢 Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: 📦 Install dependencies
+      run: npm install
+
+    - name: 🔍 Run ESLint (optional)
+      run: npx eslint .
+
+    # Możesz tu dodać testy np. z Jest
+
+    - name: ✅ Done
+      run: echo "Build passed! Ready for Render to deploy."
