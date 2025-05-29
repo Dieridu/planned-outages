@@ -1,0 +1,4 @@
+// ===== client/style.css =====
+body { font-family: sans-serif; padding: 20px; }
+h1, h2 { color: #333; }
+#outages p { margin: 5px 0; }
