@@ -5,7 +5,9 @@ function loadOutages() {
     .then(data => {
       const div = document.getElementById('outages');
       data.forEach(item => {
-        div.innerHTML += `<p><b>${item.date}</b> – ${item.area} (${item.reason})</p>`;
+        const p = document.createElement('p');
+        p.textContent = `${item.date} – ${item.area} (${item.reason})`;
+        div.appendChild(p);
       });
     });
 }
